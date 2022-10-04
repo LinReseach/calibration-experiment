@@ -95,22 +95,7 @@ class socket_connection():
             exit(1)
 
 
-    # def get_img(self):
-    #     """
-    #     Send signal to pepper to recieve image data, and convert to image data
-    #     """
-    #     self.s.send(b'getImg')
-    #     pepper_img = b""
-    #
-    #     l = self.s.recv(self.size - len(pepper_img))
-    #     while len(pepper_img) < self.size:
-    #         pepper_img += l
-    #         l = self.s.recv(self.size - len(pepper_img))
-    #
-    #     im = Image.frombytes("RGB", (self.width, self.height), pepper_img)
-    #     cv_image = cv2.cvtColor(np.asarray(im, dtype=np.uint8), cv2.COLOR_BGRA2RGB)
-    #
-    #     return cv_image[:, :, ::-1]
+ 
     def get_img(self):
         #     """
         #     Send signal to pepper to recieve image data, and convert to image data
@@ -976,15 +961,6 @@ fName = fileName+'/'+'*.jpg'
 # and make sure that the two screen's top is in one line.then the pos of the screen will be at expected place
 #note2 play video: edit- show -clips then press -> or <-
 
-
-#170 183
-
-
-
-#600 861 line take a picture
-
-# cd /Users/chenglinlin/Documents/calibration/CalibrationGame_local-master 
-# python Calibration(revised3 conti).py
 
 
 

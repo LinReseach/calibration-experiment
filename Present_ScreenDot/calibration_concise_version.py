@@ -5,7 +5,11 @@ Created on Wed Oct 12 15:41:12 2022
 
 @author: chenglinlin
 """
-
+"""
+We want to have a continuous pictures so we make picture taking and present dots separate.
+In consequence. In this calibration.py, we only present dots, don’t to take pictures.
+Present dots firstly,then followed with arrows -2022/10/04
+"""
 
 # -*- coding: utf-8 -*-
 """

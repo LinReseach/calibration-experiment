@@ -1,8 +1,1 @@
-The functions there are all for the formal experiment.
-It includes:
-Functions: get_ideal3dgaze_15dot.py, get_virtual2d.py,get_error.py.
-Main: main.py (search files and run above functions on these files)
-Test:
-test_error:test3d error for models,to check if the estimated gaze is correct
-test_ideal_error:get ground truth then get 3d error to see if the ground truth is correct
-test_virtual: check if ed error is correct
+Here is the code about how to analyze the processed data, we take all the useful information into one DataFrame. Including the participants(ID number, eye height, glasses wearing or not), screen dots places, human positions, and the computed data(3D error, 2D error, estimated 2d on the virtual screen) 

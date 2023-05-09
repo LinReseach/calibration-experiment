@@ -1,0 +1,17 @@
+For the real time implementation on the robot the file to consider is demo_pepper.py:
+In this version we want the robot to be a mirror of the human.
+The code in the last version allow the robot to move its head according to the gazing angle of the person in front of it. In particular, the robot predicts the gaze direction of the person that is sitting in front of it and replicate the same gaze direction in a symmetric way. To see the result of this code we suggest to sit in front of the robot at 1.5 meter of distance and with a table between you. On this table you can put some object and alternatively gaze at them and sat the robot. The robot will behave as a mirror and it will replicate your gaze movement giving the impression of look at the same object (joint attention). 
+
+More detail on the current implementation:
+- The movement of the robot is based on each frame acquired. If the robot acquire a picture when the participant is looking at something it replicate with its head the same gazing angle. This is the most simplest version of reaction controller that you can do. We suggest to think at different policies to decide when to move the head of the robot, maybe using more than one frames for the prediction and move the head just when some condition are matched.
+- One problem found was that the function to make the robot moves use relative yaw and pitch and not absolute one. So the movement of the robot is always relative to its current position. To make the robot moves its head to the desired position provided by the absolute value of pitch and yaw, we need to convert it to a relative pitch and yaw, that is relative to the current position (relative_pitch_offset, relative_yaw_offset).
+- To make the robot have a more smooth head behavior we decided to apply a tolerance that makes the robot moves its head just when the gaze adjustment is greater than a certain threshold.  
+- When the robot do not see anymore any faces it restore it's original position. Also here comes the problem of not moving the robot with absolute position but with relative ones. To do so we simply make the robot head moves according to the last absolute position predicted by the robot, that is the actual position of the head of the robot. (- current pitch angle, - current yaw angle).
+
+How to run the code:
+1) access to pepper robot: nao@10.15.3.25 pass: nao
+2) go to naoqi/ and run server.py --cam_id=0 --res_id=2 --send_port=12345 (upper monocular camera, 640,480 resolution)
+3) activate the l2cs conda environment 
+4) go to the folder Documents/Projects/L2CS-Net-main/
+5) run: python3 demo_pepper.py --ip=10.15.3.25 --port=12345 --cam_id=4 --snapshot models/Gaze360-20220914T091057Z-001/Gaze360/L2CSNet_gaze360.pkl
+6) output: video "pepper_example.avi" with the prediction from the pepper camera.

@@ -1,0 +1,3 @@
+Camera Calibration:
+in this project we computed the camera calibration parameters (distortion coefficients and camera matrix) with an openCV code. 
+To perform the calibration you need to take some pictures of a chess board from different points of view. The pictures are in frames folder. You just need to run the calibration.py code and the cml files will be stored into the main folder.

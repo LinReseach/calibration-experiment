@@ -1,3 +1,3 @@
 
-The repo provides the evaluation code of our paper :'Boundary Conditions for Human Gaze Estimation on A Social Robot using State-of-the-Art Models' (https://ieeexplore.ieee.org/abstract/document/10309348)
+The repo provides the implement code of our paper :'Boundary Conditions for Human Gaze Estimation on A Social Robot using State-of-the-Art Models' (https://ieeexplore.ieee.org/abstract/document/10309348)
 In this project, we systematically evaluate the performance of two appearance-based gaze tracking models on a social robot. In our setup, we vary the distance from the robot (1-3m) and camera resolution (640 * 480 and 3840 * 2160) and analyse the performance in terms of accuracy and precision. We asked participants to look at a 2D screen and convert the 2d vector to 3d to compare it with the estimated 3d gaze. 
